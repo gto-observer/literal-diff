@@ -70,6 +70,7 @@ The same workflow is in `examples/github-action.yml`.
 - Renaming an unquoted object key such as `entry_id:` is not detected.
 - A string changed intentionally and correctly is also reported as missing. Treat a warning as a prompt to read the diff, not as proof of a bug.
 - Files are scanned only when their extension is `.js`, `.mjs`, `.cjs`, `.ts`, `.tsx`, `.jsx`, `.py`, or `.ps1`.
+- Literals are found with a regular expression, not a parser. In dense code, such as several quoted strings and template literals on one line, quotes can be paired wrongly: the change is still detected, but the reported text may be a confusing fragment.
 
 ## Measured results
 
