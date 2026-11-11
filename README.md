@@ -82,3 +82,4 @@ We ran 460 delegated refactors (two rename tasks, with the run counts and pass c
 Most breaks were bulk rewrites of error-message text, such as a prefix inside `throw new Error("...")`, that regex-based tests did not notice.
 
 These numbers come from two tasks and one agent setup. Expect different rates on other code. In particular, a refactor that is supposed to change strings will always produce warnings.
+ 
