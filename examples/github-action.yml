@@ -1,0 +1,19 @@
+name: Check string literals
+on: [pull_request]
+jobs:
+  literal-diff:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: before
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          path: after
+      - uses: actions/checkout@v4
+        with:
+          repository: gto-observer/literal-diff
+          path: tool
+      - run: node tool/literal-diff.mjs before after

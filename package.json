@@ -1,0 +1,9 @@
+{
+  "name": "literal-diff",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": { "literal-diff": "./literal-diff.mjs" },
+  "scripts": { "test": "node --test" },
+  "engines": { "node": ">=20" },
+  "license": "MIT"
+}
